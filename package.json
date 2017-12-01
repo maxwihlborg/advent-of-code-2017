@@ -4,8 +4,16 @@
   "main": "index.js",
   "author": "Max Wihlborg <max.wihlborg@ispy.se>",
   "license": "MIT",
+  "scripts": {
+    "start": "mocha -w --require babel-core/register ./day-*/*.spec.js"
+  },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
   }
 }
