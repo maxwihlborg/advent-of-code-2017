@@ -1,4 +1,4 @@
-# ADvent of code JS solutions 2017
+# Advent of code JS solutions 2017
 
 run tests
 
