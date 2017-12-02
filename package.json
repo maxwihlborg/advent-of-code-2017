@@ -5,15 +5,15 @@
   "author": "Max Wihlborg <max.wihlborg@ispy.se>",
   "license": "MIT",
   "scripts": {
-    "start": "mocha -w --require babel-core/register ./day-*/*.spec.js"
+    "test": "mocha -w --require babel-core/register ./day-*/*.spec.js",
+    "start": "babel-node ./index.js"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "chai": "^4.1.2",
-    "mocha": "^4.0.1"
-  },
-  "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "minimist": "^1.2.0",
+    "mocha": "^4.0.1"
   }
 }
