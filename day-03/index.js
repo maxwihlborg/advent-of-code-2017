@@ -3,24 +3,19 @@ const maxVal = n => sideLen(n) ** 2;
 
 export const one = target => {
   let n = 0;
+
   while (maxVal(n) < target) {
     n++;
   }
 
+  const startVal = maxVal(n - 1) + 1;
   const len = sideLen(n);
 
-  const startVal = maxVal(n - 1) + 1;
-  const endVal = maxVal(n);
-  const steps = target - startVal;
+  const s = target - startVal; // step
+  const q = (s / (len - 1)) | 0; // quadrant
+  const m = q * (len - 1) - 1 + (len - 1) / 2; // midpoint
 
-  for (let j = 0; j < 4; j++) {
-    if (steps <= (j + 1) * (len - 1) - 1) {
-      const m = j * (len - 1) - 1 + (len - 1) / 2;
-      return Math.abs(steps - m) + n;
-    }
-  }
-
-  return null;
+  return Math.abs(s - m) + n;
 };
 
 export const two = target => {
@@ -42,9 +37,12 @@ export const two = target => {
 
   let n = 1;
   let i = 1;
-  while (true) {
+  let val = 1;
+  while (val <= target) {
     i++;
-    const startVal = maxVal(Math.max(0, n - 1)) + 1;
+    if (i > maxVal(n)) n++;
+
+    const startVal = maxVal(n - 1) + 1;
     const len = sideLen(n);
 
     const s = i - startVal; // step
@@ -71,16 +69,10 @@ export const two = target => {
         break;
     }
 
-    const val = (coords[key(x, y)] = neighbours.reduce((acc, [dx, dy]) => {
+    val = coords[key(x, y)] = neighbours.reduce((acc, [dx, dy]) => {
       return acc + (coords[key(x + dx, y + dy)] || 0);
-    }, 0));
-
-    if (val > target) {
-      return val;
-    }
-
-    if (i >= maxVal(n)) {
-      n++;
-    }
+    }, 0);
   }
+
+  return val;
 };
