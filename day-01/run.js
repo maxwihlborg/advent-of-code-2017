@@ -1,5 +1,5 @@
 import { read } from "../util";
-import run from "./index";
+import { one, two } from "./index";
 
-console.log(run(read("day-01/data.txt")));
-console.log(run(read("day-01/data.txt"), a => (a.length / 2) | 0));
+console.log("Part 1", one(read("day-01/data.txt")));
+console.log("Part 2", two(read("day-01/data.txt")));
