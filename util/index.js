@@ -14,3 +14,5 @@ export const toRows = data =>
     .split("\n")
     .map(s => s.trim())
     .filter(Boolean);
+
+export const firstRow = rows => rows[0] || ''
