@@ -1,14 +1,20 @@
 # Advent of code JS solutions 2017
 
-run tests
+Create skeleton for day
+
+```bash
+yarn run create
+```
+
+Run tests
 
 ```bash
 yarn test
 ```
 
-get day output
+Get day output
 
 ```bash
-yarn run day-{date} # eg. yarn run day-09
+yarn start day-{date} # eg. yarn run day-09
 ```
 
