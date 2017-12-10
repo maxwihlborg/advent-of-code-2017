@@ -1,6 +1,6 @@
 import { pipe, toRows, firstRow } from "../util";
 
-const toArr = r => r[0].split(/,\s*/).map(n => ~~n);
+const toArr = r => r.split(/,\s*/).map(n => ~~n);
 const getArr = len => new Array(len).fill(0).map((_, i) => i);
 const toASCII = str => [].map.call(str, s => s.charCodeAt(0));
 

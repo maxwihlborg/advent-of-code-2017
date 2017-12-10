@@ -5,7 +5,7 @@ describe("day 10", () => {
   describe("part 1", () => {
     it("test 1", () => assert.equal(one(5)("3, 4, 1, 5"), 12));
   });
-  describe.only("part 2", () => {
+  describe("part 2", () => {
     it("test 1", () =>
       assert.equal(two(""), "a2582a3a0e66e6e86e3812dcb672a272"));
     it("test 2", () =>
